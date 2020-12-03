@@ -1,2 +1,2 @@
 # rosalind-solutions
-Solutions to the problems on Rosalind 
+Solutions to the problems on Rosalind website
