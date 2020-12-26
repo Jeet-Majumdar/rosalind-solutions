@@ -49,10 +49,18 @@ def gen_consensus(A, C, G, T):
 strr=[]
 with  open('rosalind_cons.txt') as fp:
     contents = fp.read()
+    #print(contents)
+    temporary=""
     for entry in contents.split():
-        if(entry[:9]!=">Rosalind"):
+        if(entry[:9]==">Rosalind"):
             #print(entry)
-            strr.append(entry)
+            strr.append(temporary)
+            temporary=""
+        else:
+            temporary=temporary+str(entry)
+    strr = strr[1:]
+#print(strr)
+#print(len(temporary))
 
 A, C, G, T, As, Cs, Gs, Ts = gen_profile_matrix(strr)
 consensus = gen_consensus(A, C, G, T)
